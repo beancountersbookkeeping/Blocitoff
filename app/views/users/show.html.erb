@@ -1,0 +1,14 @@
+<h1>Your To Do List<h1>
+
+<% if current_user %>
+  <div class="col-md-8">
+    <div class='js-items'>
+      <% @items.each do |item| %>
+        <%= render partial: 'items/item', locals: { item: item } %>
+      <% end %>
+    </div>
+    <div class='new-item'>
+      <%= render partial: 'items/form', locals: { item: @items } %>
+    </div>
+  </div>
+<% end %>
