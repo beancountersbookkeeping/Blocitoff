@@ -1,5 +1,4 @@
 <div>
-  <!--<button type="button" class="btn btn-default btn-lg display-inline-right">
-  </button>-->
+   <%= link_to "Delete", item, method: :delete,remote: true, class: 'glyphicon glyphicon-ok' %>
   <h4 class='list-group-item-heading'><%= item.name %></h4>
 </div>

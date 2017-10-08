@@ -18,6 +18,17 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+     @item = Item.find(params[:id])
+
+     if @item.destroy
+       redirect_to users_show_path
+     else
+       flash.now[:alert] = "There was an error deleting the item."
+       render :show
+     end
+   end
+
   def item_params
      params.require(:item).permit(:name, :user)
   end
