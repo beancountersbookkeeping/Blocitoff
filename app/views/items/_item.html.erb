@@ -1,4 +1,6 @@
 <div>
    <%= link_to "Delete", item, method: :delete,remote: true, class: 'glyphicon glyphicon-ok' %>
-  <h4 class='list-group-item-heading'><%= item.name %></h4>
+  <h4 class='list-group-item-heading'><%= item.name %>
+    <% time = Time.now %>
+    <%= "#{distance_of_time_in_words(time, item.created_at + 7.days)} before deletion" %></p></h4>
 </div>
